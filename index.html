@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="description" content="WEBstudio site" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
@@ -10,7 +11,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link href="./css/styles.css" rel="stylesheet" />
+    <link href="./css/styles-adaptive.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,6 +24,22 @@
   </head>
   <body>
     <header class="header">
+      <div class="container-header">
+        <a href="./index.html" class="logo link"
+          >WEB<span class="studio-logo">Studio</span>
+        </a>
+
+        <button
+          class="menu-toggle-open js-open-menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg width="24" height="24" class="icon-hamburger">
+            <use href="./images/icons.svg#icon-hamburger"></use>
+          </svg>
+        </button>
+      </div>
+
       <div class="header-elements container">
         <nav class="navigation">
           <a href="./index.html" class="logo link"
@@ -45,7 +62,7 @@
           </ul>
         </nav>
         <address class="adress">
-          <ul class="list menu">
+          <ul class="list menu-column">
             <li>
               <a
                 href="mailto:info@devstudio.com"
@@ -71,7 +88,7 @@
           </button>
         </div>
       </section>
-      <section class="block-second">
+      <section class="block-second" id="block-second">
         <div class="container">
           <h2 class="visually-hidden">About Us</h2>
           <ul class="list about-menu">
@@ -131,14 +148,22 @@
           <h2 class="h-two-title">What are we doing</h2>
           <ul class="list img-menu">
             <li class="img-element">
-              <img src="./images/img1.jpg" width="360" alt="desctop screen" />
-            </li>
-            <li class="img-element">
-              <img src="./images/img2.jpg" width="360" alt="mobiles screens" />
+              <img
+                srcset="./images/img1.jpg 1x, ./images/img1@2x.jpg 2x"
+                width="360"
+                alt="desctop screen"
+              />
             </li>
             <li class="img-element">
               <img
-                src="./images/img3.jpg"
+                srcset="./images/img2.jpg 1x, ./images/img2@2x.jpg 2x"
+                width="360"
+                alt="mobiles screens"
+              />
+            </li>
+            <li class="img-element">
+              <img
+                srcset="./images/img3.jpg 1x, ./images/img3@2x.jpg 2x"
                 width="360"
                 alt="holding mobile in hands"
               />
@@ -146,13 +171,13 @@
           </ul>
         </div>
       </section>
-      <section class="block-fourth">
+      <section class="block-fourth" id="block-fourth">
         <div class="container">
           <h2 class="h-two-title">Our Team</h2>
           <ul class="list img-menu">
             <li class="list-el">
               <img
-                src="./images/team1.jpg"
+                srcset="./images/team1.jpg 1x, ./images/team1@2x.jpg 2x"
                 width="264"
                 height="260"
                 alt="Mark Guerrero"
@@ -194,7 +219,7 @@
             </li>
             <li class="list-el">
               <img
-                src="./images/team2.jpg"
+                srcset="./images/team2.jpg 1x, ./images/team2@2x.jpg 2x"
                 width="264"
                 height="260"
                 alt="Tom Ford"
@@ -236,7 +261,7 @@
             </li>
             <li class="list-el">
               <img
-                src="./images/team3.jpg"
+                srcset="./images/team3.jpg 1x, ./images/team3@2x.jpg 2x"
                 width="264"
                 height="260"
                 alt="Gamila Garcia"
@@ -278,7 +303,7 @@
             </li>
             <li class="list-el">
               <img
-                src="./images/team4.jpg"
+                srcset="./images/team4.jpg 1x, ./images/team4@2x.jpg 2x"
                 width="264"
                 height="260"
                 alt="Daniel Wilson"
@@ -511,6 +536,70 @@
         </form>
       </div>
     </div>
+
+    <div class="menu-container js-menu-container" id="mobile-menu">
+      <button class="menu-toggle js-close-menu">
+        <svg width="8" height="8" class="close-svg">
+          <use href="./images/icons.svg#icon-close"></use>
+        </svg>
+      </button>
+
+      <ul class="mobile-menu">
+        <li><a href="./index.html" class="link link-mob">Studio</a></li>
+        <li><a href="./portfolio.html" class="link link-mob">Portfolio</a></li>
+        <li><a href="" class="link link-mob">Contacts</a></li>
+      </ul>
+
+      <address class="adress-mob">
+        <ul class="list">
+          <li>
+            <a
+              href="tel:+110001111111"
+              class="link menu-link link-mob adress-text"
+              >+11 (000) 111-11-11</a
+            >
+          </li>
+          <li>
+            <a href="mailto:info@devstudio.com" class="link menu-link mail-text"
+              >info@devstudio.com</a
+            >
+          </li>
+        </ul>
+      </address>
+
+      <ul class="list socials-header">
+        <li class="socials-header-icon">
+          <a class="socials-team-link" href="">
+            <svg width="24" height="24" class="socials-team-svg">
+              <use href="./images/icons.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials-team-icon">
+          <a class="socials-team-link" href="">
+            <svg width="24" height="24" class="socials-team-svg">
+              <use href="./images/icons.svg#icon-twitter"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials-team-icon">
+          <a class="socials-team-link" href="">
+            <svg width="24" height="24" class="socials-team-svg">
+              <use href="./images/icons.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials-team-icon">
+          <a class="socials-team-link" href="">
+            <svg width="24" height="24" class="socials-team-svg">
+              <use href="./images/icons.svg#icon-linkedin"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+
     <script src="./js/modal.js"></script>
+    <script defer src="js/mobile-menu.js"></script>
   </body>
 </html>
